@@ -14,7 +14,7 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/image_upload/css/image_upload.css"
-# web_include_js = "/assets/image_upload/js/image_upload.js"
+web_include_js = ["image-upload.bundle.js"]
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "image_upload/public/scss/website"

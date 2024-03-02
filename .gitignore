@@ -5,3 +5,5 @@
 tags
 image_upload/docs/current
 node_modules/
+
+image_upload/public/dist/*
