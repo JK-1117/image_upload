@@ -70,6 +70,7 @@ export default {
       payload.append("is_private", 0);
       payload.append("folder", "Home/Attachments");
       this.progress = 0;
+      this.error = "";
 
       $.ajax({
         type: "POST",
@@ -98,7 +99,10 @@ export default {
           });
         },
         error: (error) => {
-          this.error = error;
+          this.error = "Opps! Something went wrong. Please try again later.";
+          this.progress = 0;
+          this.imgUrl = null;
+          console.error(error);
         },
         async: true,
         data: payload,
@@ -157,6 +161,7 @@ export default {
           <span class="text-gray-600 inline-block">
             You may share or save this link for future access:
           </span>
+          <br />
           {{ imgUrl }}
         </a>
         <div v-if="progress > 0" class="text-indigo-500">{{ progress }}%</div>
